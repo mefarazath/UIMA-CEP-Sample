@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<executionPlan name="org.wso2.uima.TrafficAnalysis" statistics="enable"
+  trace="enable" xmlns="http://wso2.org/carbon/eventprocessor">
+  <description>
+  	Tranform the extracted Location using UIMA to geocode and send to the Output Stream
+  </description>
+  <siddhiConfiguration>
+    <property name="siddhi.persistence.snapshot.time.interval.minutes">0</property>
+    <property name="siddhi.enable.distributed.processing">false</property>
+  </siddhiConfiguration>
+  <importedStreams>
+    <stream as="TwitterIn"
+      name="org.wso2.uima.TwitterExtractedInputFeed" version="1.0.0"/>
+  </importedStreams>
+  <queryExpressions><![CDATA[from TwitterIn#transform.geo:geocode(Traffic_Location)
+	select *
+	insert into WebSocketOut]]></queryExpressions>
+  <exportedStreams>
+    <stream name="org.wso2.uima.TwitterExtractedOutputFeed"
+      valueOf="WebSocketOut" version="1.0.0"/>
+  </exportedStreams>
+</executionPlan>

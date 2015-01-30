@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventBuilder name="org.wso2.uima.SoapEventBuilder" statistics="disable"
+    trace="disable" xmlns="http://wso2.org/carbon/eventbuilder">
+    <from eventAdaptorName="org.wso2.uima.SoapEventInputAdaptor" eventAdaptorType="soap">
+        <property name="operation">trafficUpdate</property>
+    </from>
+    <mapping customMapping="disable" type="xml"/>
+    <to streamName="org.wso2.uima.TwitterExtractedInputFeed" version="1.0.0"/>
+</eventBuilder>

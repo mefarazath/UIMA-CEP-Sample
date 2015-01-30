@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventBuilder name="org.wso2.uima.WSO2EventBuilder" statistics="enable"
+    trace="enable" xmlns="http://wso2.org/carbon/eventbuilder">
+    <from eventAdaptorName="org.wso2.uima.WSO2EventAdaptor" eventAdaptorType="wso2event">
+        <property name="stream">org.wso2.uima.TwitterExtractedInputFeed</property>
+        <property name="version">1.0.0</property>
+    </from>
+    <mapping customMapping="disable" type="wso2event"/>
+    <to streamName="org.wso2.uima.TwitterExtractedInputFeed" version="1.0.0"/>
+</eventBuilder>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventFormatter name="org.wso2.uima.ConsoleLoggerFormatter"
+  statistics="disable" trace="disable" xmlns="http://wso2.org/carbon/eventformatter">
+  <from streamName="org.wso2.uima.TwitterExtractedOutputFeed" version="1.0.0"/>
+  <mapping customMapping="disable" type="text"/>
+  <to eventAdaptorName="org.wso2.uima.DefaultLoggerOutputAdaptor" eventAdaptorType="logger">
+    <property name="uniqueId">ExtractedDetails</property>
+  </to>
+</eventFormatter>

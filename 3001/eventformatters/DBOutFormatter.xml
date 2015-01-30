@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventFormatter name="DBOutFormatter" statistics="enable" trace="enable" xmlns="http://wso2.org/carbon/eventformatter">
+  <from streamName="org.wso2.uima.TwitterExtractedFeed" version="1.0.0"/>
+  <mapping customMapping="enable" type="map">
+    <property>
+      <from name="meta_Timestamp"/>
+      <to name="TimeStamp"/>
+    </property>
+    <property>
+      <from name="Twitter_Text"/>
+      <to name="TweetText"/>
+    </property>
+    <property>
+      <from name="Traffic_Location"/>
+      <to name="Location"/>
+    </property>
+    <property>
+      <from name="Traffic_Level"/>
+      <to name="TrafficLevel"/>
+    </property>
+  </mapping>
+  <to eventAdaptorName="MySQLOutputEventAdaptor" eventAdaptorType="mysql">
+    <property name="table.name">Extracted</property>
+    <property name="update.keys"/>
+    <property name="execution.mode">insert-or-update</property>
+  </to>
+</eventFormatter>

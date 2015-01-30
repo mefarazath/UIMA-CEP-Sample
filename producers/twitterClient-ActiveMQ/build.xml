@@ -1,0 +1,47 @@
+
+<project default="run">
+    <property name="jmsUrl" value="tcp://localhost:61616"/>
+    <property name="topicName" value="Feed"/>
+    <property name="samples-lib.dir" value="../../lib" />	
+    <property name="class.dir" value="build/classes"/>
+
+    <target name="setMainClass">
+    <condition property="mainClass" value="org.wso2.cep.uima.demo.TwitterStreamer">
+	<equals arg1="${streaming}" arg2="true" />
+    </condition>
+    </target>
+
+    <target name="clean">
+        <delete dir="build" quiet="true"/>
+        <delete dir="${class.dir}" quiet="true"/>
+    </target>
+
+    <path id="javac.classpath">
+        <pathelement path="${class.dir}"/>
+        <fileset dir="${samples-lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="init" depends="setMainClass">
+        <property name="mainClass" value="org.wso2.cep.uima.demo.TweetExtractor" />
+        <mkdir dir="${class.dir}"/>
+    </target>
+ 
+    <target name="compile" depends="init">
+        <javac srcdir="src" destdir="${class.dir}" includeantruntime="false">
+            <include name="*/**"/>
+            <classpath refid="javac.classpath"/>
+        </javac>
+    </target>
+
+
+    <target name="run" depends="compile">
+        <java classname="${mainClass}"
+              classpathref="javac.classpath" fork="true">
+	        <arg value="${jmsUrl}"/>
+            <arg value="${topicName}"/>
+        </java>
+    </target>
+
+</project>

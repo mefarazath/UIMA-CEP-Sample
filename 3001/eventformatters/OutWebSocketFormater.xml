@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventFormatter name="OutWebSocketFormater" statistics="disable"
+  trace="disable" xmlns="http://wso2.org/carbon/eventformatter">
+  <from streamName="WebSocketOut" version="1.0.0"/>
+  <mapping customMapping="disable" type="xml"/>
+  <to eventAdaptorName="TrafficFeedOutputAdaptor" eventAdaptorType="websocket">
+    <property name="websocket.topic">webtopic</property>
+  </to>
+</eventFormatter>

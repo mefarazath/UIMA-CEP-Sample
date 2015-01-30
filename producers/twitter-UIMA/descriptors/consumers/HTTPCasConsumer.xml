@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ /*
+  ~ *Copyright (c) 2005-2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+  ~ *
+  ~ *WSO2 Inc. licenses this file to you under the Apache License,
+  ~ *Version 2.0 (the "License"); you may not use this file except
+  ~ *in compliance with the License.
+  ~ *You may obtain a copy of the License at
+  ~ *
+  ~ *http://www.apache.org/licenses/LICENSE-2.0
+  ~ *
+  ~ *Unless required by applicable law or agreed to in writing,
+  ~ *software distributed under the License is distributed on an
+  ~ *"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  ~ *KIND, either express or implied. See the License for the
+  ~ *specific language governing permissions and limitations
+  ~ *under the License.
+  ~ */
+  -->
+
+<casConsumerDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+    <implementationName>org.wso2.uima.collectionProccesingEngine.consumers.HttpCasConsumer</implementationName>
+    <processingResourceMetaData>
+        <name>httpCasConsumer</name>
+        <description/>
+        <version>1.0</version>
+        <vendor/>
+        <configurationParameters>
+
+            <configurationParameter>
+                <name>httpEndPoint</name>
+                <description>HTTP EndPoint to which the CasConsumer publishes events to</description>
+                <type>String</type>
+                <multiValued>false</multiValued>
+                <mandatory>true</mandatory>
+            </configurationParameter>
+
+            <configurationParameter>
+                <name>username</name>
+                <description>Username of the tenant to connect to databridge</description>
+                <type>String</type>
+                <multiValued>false</multiValued>
+                <mandatory>true</mandatory>
+            </configurationParameter>
+
+            <configurationParameter>
+                <name>password</name>
+                <description>Password to authenticate</description>
+                <type>String</type>
+                <multiValued>false</multiValued>
+                <mandatory>true</mandatory>
+            </configurationParameter>
+        </configurationParameters>
+
+        <configurationParameterSettings>
+
+            <nameValuePair>
+                <name>httpEndPoint</name>
+                <value>
+                    <string>http://localhost:9763/endpoints/org.wso2.uima.HttpEventInputAdaptor/TrafficUpdate</string>
+                </value>
+            </nameValuePair>
+            <nameValuePair>
+                <name>username</name>
+                <value>
+                    <string>admin</string>
+                </value>
+            </nameValuePair>
+            <nameValuePair>
+                <name>password</name>
+                <value>
+                    <string>admin</string>
+                </value>
+            </nameValuePair>
+
+        </configurationParameterSettings>
+        <typeSystemDescription/>
+        <typePriorities/>
+        <fsIndexCollection/>
+        <capabilities>
+            <capability>
+                <inputs/>
+                <outputs/>
+                <languagesSupported/>
+            </capability>
+        </capabilities>
+        <operationalProperties>
+            <modifiesCas>false</modifiesCas>
+            <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+            <outputsNewCASes>false</outputsNewCASes>
+        </operationalProperties>
+    </processingResourceMetaData>
+    <resourceManagerConfiguration/>
+</casConsumerDescription>
