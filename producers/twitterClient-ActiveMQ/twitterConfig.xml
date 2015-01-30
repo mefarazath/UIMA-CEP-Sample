@@ -2,12 +2,12 @@
 
 <TwitterConfiguration>
 
-	<!-- API Keys for your twitter App -->
+	<!-- API Keys for your twitter App replace with valid keys -->
 	<TwitterAPIKeys>
-		<consumerKey>IxEX6LoI3Hcp91JX6KHEVECKu</consumerKey>
-		<consumerSecret>vr4RRmrT7UvKQO703Z3K9U5MsFzc7G8N7M8IBLzWQn3BrCQGIE</consumerSecret>
-		<accessToken>711930980-dThMw79BL0i33dOpfCZBqDYH8FWIeQYXdkKOsvfa</accessToken>
-		<accessTokenSecret>kgVIchdQrkjKPZoReBMECSLoyPegEHm2Y8mi8BLqDQEtP</accessTokenSecret>
+		<consumerKey>*************************</consumerKey>
+		<consumerSecret>**************************</consumerSecret>
+		<accessToken>******************************</accessToken>
+		<accessTokenSecret>***************************</accessTokenSecret>
 	</TwitterAPIKeys>
 
 	<!-- 
@@ -26,7 +26,9 @@
 	-->
 	<StreamingConfiguration>
 		<!-- TwitterIDs of the users to filter the stream for-->
-		<followers>711930980,808888003,4366881,2984541727</followers>
+		<!-- road_lk == 808888003 -->
+		<!-- uimacep == 2984541727-->
+		<followers>808888003,2984541727</followers>
 	</StreamingConfiguration>
 
 </TwitterConfiguration>
